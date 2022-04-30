@@ -1,27 +1,28 @@
 # Songs for playing on Raspberry Pi Pico
 
-
 Songs to play with a buzzer connected to a Raspberry Pi Pico.
 
-I run a small electronics workshop at an art academy. I have decided to gradually switch over from the Arduino Uno to the Raspberry Pi Pico as the go-to board in my workshop.
+## What is this and why do I need it? 
 
-Connecting a buzzer to a microcontroller is a fun first project. After making the first beeping sounds it's fun to also make  so porting Robson's list to Micropython made sense. This version is also a good example of the advantages of the Pico over the Arduino Uno. With the Arduino, each melody had to be a single file to fit on the Uno's limited flash memory of 32k bytes and we had to upload those files every time we wanted to change.
-The complete list of 41 melodies easily fits on the 2 Megabyte memory of the Pico. 
+I run a small electronics workshop at an art academy. I have decided to gradually switch over from the Arduino Uno to the Raspberry Pi Pico as the go-to board in my workshop. They're much faster and have more memory, are cheaper, and they run Python instead of C which a better choice to start learning coding with. It's a nice bonus that they can be programmed to act as a keyboard or mouse.
 
+Connecting a buzzer to a microcontroller is a fun first project. After making the first beeping sounds it's fun to also make it play songs. For Arduino there is [this fine list](https://github.com/robsoncouto/arduino-songs) of scripts to do that. To be able to use those tunes with the Pico, we need those scripts translated into the [MicroPython](https://www.raspberrypi.com/documentation/microcontrollers/micropython.html) language. 
+This adaptation highlights one of the advantages of the Pico over the Arduino Uno. With the Arduino, each melody had to be a single file to fit on the Uno's limited flash memory of 32k bytes and we had to upload a new file every time we wanted to try a different tune.
+The complete list of 41 melodies (together with the script to play melodies plus the notes frequencies, 124 Kb in total) easily fits on the 2 Megabyte memory of the Pico.
 
-## Usage
+## How to use
 
-These scripts run on Micropython. Save them to the Pico (with the Thonny editor for instance).
+Save playMelodies.py, melodies.py, notes.py and __import__.py to the Pico (using the [Thonny editor](https://thonny.org/) for instance).
 
-If you want to compare the code with the original score, I try to group the notes in a measure as one line of ccode and the staves as groups of lines. However, in some cases notes will be tied together among measures or be dotted and this rule is broken.
+Connect a buzzer to the Pico: the red wire to pin 15 and the black wire to a GND, like so:
 
-## Hardware
+![alt tag](pico-buzzer.png)
 
-Just connect an piezo to the board and you are good to go. Pin 11 is used in every sketch because some piezo speakers can be connected between it and the close GND pin without any wiring. You can use basically any pin, as long  as they can be used as digital pins (pins A6 and A7 of the Arduino Nano and mini are analog only). Just remember to assign the pin number to the `buzzer` variable. 
+The buzzer (also called piezo speaker or piezo disk) comes in two flavors: active and passive. To play melodies you need the passive kind. The active buzzers are what make the 'beep' sound in electronic devices like hand scanners. They will try to produce the same frequency 'beep' no matter what tone you ask them to play.
 
-![alt tag](hardware.png)
+You can also connect an amplified speaker to those pins, if you want more loudness when you play the Super Mario theme :-)
 
-There are two kinds of piezo buzzers: active and passive. The active one that plays a specific pitch when powevered and is not good for this purpose. The passive kind functions like a speaker, reproducing the pitch you apply to it. You can test the piezo speaker with the "blink" example, the good piezo speaker will just click, while the other kind will play a pitch every other second.  
+In playMelodies.py you can change the volume and which track to play.
 
 ## List of tunes
 
@@ -70,5 +71,5 @@ There are two kinds of piezo buzzers: active and passive. The active one that pl
 ## Source
 
 This is a port of Robson Couto's list of songs for Arduino: https://github.com/robsoncouto/arduino-songs
-The sources he used are mentioned in melodies.py.
-The sounds are all monophonic; if you want
+The sources he used are mentioned in melodies.py. The script I used to scrape the melodies from the .ino files is in the archive folder.
+The sounds are all monophonic; if you want more complicated tunes, try out [this repository](https://github.com/james1236/buzzer_music).
