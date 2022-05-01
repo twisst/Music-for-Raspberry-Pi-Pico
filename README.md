@@ -20,6 +20,7 @@ Because all melodies are in one file, it's easy to add a button to switch to the
 
 ![alt tag](pico-buzzer-button.png)
 
+When you push the button, the Pico will play the next song on the list. It also prints the title of that song to the shell of your editor.
 If you don't have a button, then you can also make and break the connection with just a wire between those pins.
 
 ## About the speaker
