@@ -4,7 +4,7 @@ Songs to play with a buzzer connected to a Raspberry Pi Pico.
 
 ## How to use
 
-Save playMelodies.py, melodies.py, notes.py and \_\_init\_\_.py to the Pico (using the [Thonny editor](https://thonny.org/) for instance). 
+Open playMelodies.py, melodies.py and notes.py in an editor ([Thonny](https://thonny.org/) for instance) and save them to the Pico.  
 
 Connect a buzzer to the Pico: one wire to pin 16 and the other to a ground pin, like so:
 
