@@ -30,11 +30,11 @@ You can also connect an amplified speaker to those pins, if you want more volume
 
 ## List of tunes
 
- 0. Game of Thrones
- 1. Greensleeves
- 2. Silent Night
- 3. Pacman
- 4. Ode an die Freude, Beethoven's Symphony No. 9 
+ 0. Star Trek intro
+ 1. Silent Night
+ 2. Pacman
+ 3. Ode an die Freude, Beethoven's Symphony No. 9
+ 4. Star Wars theme
  5. Wiegenlied (Brahms' Lullaby)
  6. Theme A from Tetris (Korobeiniki)
  7. Happy Birthday
@@ -55,12 +55,12 @@ You can also connect an amplified speaker to those pins, if you want more volume
 22. Jigglypuff's Song (Pokémon)
 23. We Wish You a Merry Christmas
 24. Keyboard cat
-25. Star Trek intro
-26. Green Hill Zone (Sonic the Hedgehog)
-27. The Legend of Zelda theme
-28. Baby Elephant Walk
-29. Bloody Tears (Castlevania II)
-30. Star Wars theme
+25. Game of Thrones
+26. Greensleeves
+27. Green Hill Zone (Sonic the Hedgehog)
+28. The Legend of Zelda theme
+29. Baby Elephant Walk
+30. Bloody Tears (Castlevania II)
 31. O Pulo da Gaita (Auto da Compadecida)
 32. Vampire Killer (Castlevania)
 33. Never Gonna Give You Up - Rick Astley
