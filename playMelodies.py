@@ -1,14 +1,17 @@
 from machine import Pin, PWM
 from utime import sleep
 
-buzzer = PWM(Pin(15))   # pin where buzzer is connected
-
 from melodies import *  # import melodies.py
 from notes import *     # import notes.py
 
-track = 25      # choose track here (see the list in melodies.py)
-volume = 800   # set volume to a value between 0 and 1000
+buzzer = PWM(Pin(19))   # pin where buzzer is connected
+button = Pin(15, Pin.IN, Pin.PULL_UP)  # pin where you may connect a button
 
+track = 0      # choose track here (see the list in melodies.py)
+volume = 600   # set volume to a value between 0 and 1000
+
+
+# functions to play the melodies
 
 def playtone(frequency):
     buzzer.duty_u16(volume)    
@@ -43,6 +46,7 @@ def playsong(mysong):
         # iterate over the notes of the melody. 
         # Remember, the array is twice the number of notes (notes + durations)
         for thisNote in range(2, len(mysong), 2):
+            print("play",end='')
             
             noteduration = duration(tempo, int(mysong[thisNote+1]))
             
@@ -54,10 +58,30 @@ def playsong(mysong):
             sleep(noteduration*0.9/1000) # we only play the note for 90% of the duration...
             be_quiet()
             sleep(noteduration*0.1/1000) # ... and leave 10% as a pause between notes
-    
+        
+            if button.value()==0: # stop playing this track if button is pushed
+                print("pushed!")
+                return
+            
     except: # make sure the buzzer stops making noise when something goes wrong or when the script is stopped
         
         be_quiet()
         
 
-playsong(melody[track])  # start playing the melody
+
+playsong(melody[track])  # actually start playing the melody
+
+
+
+# the next part is added so you can add a button to switch melodies
+
+while True: # constantly keep checking if the button is being pressed
+    if button.value()==0: # if it is...
+        while button.value()==0: # ...first wait for the button to be unpressed
+            sleep(0.1)
+        track+=1 # ... and then play the next track
+        if track > len(melody):
+            track = 0
+        print(track)
+        playsong(melody[track])  # start playing the melody
+    sleep(0.1)
