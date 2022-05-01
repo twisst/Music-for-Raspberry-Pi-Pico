@@ -4,15 +4,15 @@ Songs to play with a buzzer connected to a Raspberry Pi Pico.
 
 ## How to use
 
-Open playMelodies.py, melodies.py and notes.py in an editor ([Thonny](https://thonny.org/) for instance) and save them to the Pico.  
+Download play.py, melodies.py and notes.py and save them to the Pico. Easiest way to do that is using the [Thonny](https://thonny.org/) editor (here's a [guide](https://www.freva.com/transfer-files-between-computer-and-raspberry-pi-pico/)).
 
-Connect a buzzer to the Pico: one wire to pin 16 and the other to a ground pin, like so:
+Then connect a buzzer to the Pico: one wire to pin 16 and the other to a ground pin, like so:
 
 ![alt tag](pico-buzzer.png)
 
-Once the buzzer is connected and the scripts are saved to the Pico, then run playMelodies.py. You should hear something!
+Once the buzzer is connected and the scripts are saved to the Pico, run play.py. You should hear the first tune!
 
-In playMelodies.py you can change the volume and which track to play. Run the file again from Thonny when you change either.
+In play.py you can change the volume and which track to play. Run the file again from Thonny when you change either.
 
 ## Adding a button
 
@@ -20,6 +20,7 @@ Because all melodies are in one file, it's easy to add a button to switch to the
 
 ![alt tag](pico-buzzer-button.png)
 
+When you push the button, the Pico will play the next song on the list. It also prints the title of that song to the shell of your editor.
 If you don't have a button, then you can also make and break the connection with just a wire between those pins.
 
 ## About the speaker
@@ -76,9 +77,10 @@ You can also connect an amplified speaker to those pins, if you want more volume
 
 I run an electronics workshop at an art academy. I have decided to gradually switch over from the Arduino Uno to the Raspberry Pi Pico as the go-to board in my workshop. They're much faster and have more memory, are cheaper, and they run Python instead of C which is a better choice to start learning coding with. It's a nice bonus that the Pico can be programmed to act as a keyboard or mouse.
 
-Connecting a buzzer to a microcontroller is a fun starter project. After making the first beeping sounds it's fun to also make it play songs. For Arduino there is [this fine list](https://github.com/robsoncouto/arduino-songs) of scripts to do that. To use those tunes with the Pico, it's easier to translate these scripts into the [MicroPython](https://www.raspberrypi.com/documentation/microcontrollers/micropython.html) language. 
-This adaptation highlights one of the advantages of the Pico over the Arduino Uno. With the Arduino, each melody had to be a single file to fit on the Uno's limited flash memory of 32k bytes and we had to upload a new file every time we wanted to try a different tune.
-The complete list of 41 melodies (together with the script to play melodies plus the notes frequencies, 124 Kb in total) easily fits on the 2 Megabyte memory of the Pico.
+Connecting a buzzer to a microcontroller is a fun starter project. After making the first beeping sounds it's fun to also make it play songs. For Arduino there is [this fine list](https://github.com/robsoncouto/arduino-songs) of scripts to do that. To play those tunes with the Pico, it's easier to translate the scripts into the [MicroPython](https://www.raspberrypi.com/documentation/microcontrollers/micropython.html) language.
+
+This adaptation also highlights one of the advantages of the Pico over the Arduino Uno. With the Arduino, each melody had to be a single file for it to fit on the Uno's limited flash memory of 32k bytes. That meant we had to upload a new file every time we wanted to try a different tune.
+The complete list of 41 melodies (together with the script to play melodies plus the notes frequencies, 125 Kb in total) easily fits on the 2 Megabyte memory of the Pico.
 
 ## Source
 
