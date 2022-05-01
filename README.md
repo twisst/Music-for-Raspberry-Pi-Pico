@@ -8,7 +8,7 @@ Download play.py, melodies.py and notes.py and save them to the Pico. Easiest wa
 
 Then connect a buzzer to the Pico: one wire to pin 16 and the other to a ground pin, like so:
 
-![alt tag](pico-buzzer.png)
+![alt tag](img/pico-buzzer.png)
 
 Once the buzzer is connected and the scripts are saved to the Pico, run play.py. You should hear the first tune!
 
@@ -18,7 +18,7 @@ In play.py you can change the volume and which track to play. Run the file again
 
 Because all melodies are in one file, it's easy to add a button to switch to the next track. Connect one to a ground connection and pin 15, like so:
 
-![alt tag](pico-buzzer-button.png)
+![alt tag](img/pico-buzzer-button.png)
 
 When you push the button, the Pico will play the next song on the list. It also prints the title of that song to the shell of your editor.
 If you don't have a button, then you can also make and break the connection with just a wire between those pins.
