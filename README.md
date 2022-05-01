@@ -4,15 +4,15 @@ Songs to play with a buzzer connected to a Raspberry Pi Pico.
 
 ## How to use
 
-Open playMelodies.py, melodies.py and notes.py in an editor ([Thonny](https://thonny.org/) for instance) and save them to the Pico.  
+Download play.py, melodies.py and notes.py and save them to the Pico. Easiest way to do that is using the [Thonny](https://thonny.org/) editor (here's a [guide](https://www.freva.com/transfer-files-between-computer-and-raspberry-pi-pico/)).
 
-Connect a buzzer to the Pico: one wire to pin 16 and the other to a ground pin, like so:
+Then connect a buzzer to the Pico: one wire to pin 16 and the other to a ground pin, like so:
 
 ![alt tag](pico-buzzer.png)
 
-Once the buzzer is connected and the scripts are saved to the Pico, then run playMelodies.py. You should hear something!
+Once the buzzer is connected and the scripts are saved to the Pico, run play.py. You should hear the first tune!
 
-In playMelodies.py you can change the volume and which track to play. Run the file again from Thonny when you change either.
+In play.py you can change the volume and which track to play. Run the file again from Thonny when you change either.
 
 ## Adding a button
 
