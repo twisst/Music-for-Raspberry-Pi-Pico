@@ -4,7 +4,7 @@ from utime import sleep
 from melodies import *  # import melodies.py
 from notes import *     # import notes.py
 
-buzzer = PWM(Pin(19))   # pin where buzzer is connected
+buzzer = PWM(Pin(20))   # pin where buzzer is connected
 button = Pin(15, Pin.IN, Pin.PULL_UP)  # pin where you may connect a button
 
 track = 0      # choose track here (see the list in melodies.py)
@@ -14,7 +14,7 @@ volume = 600   # set volume to a value between 0 and 1000
 # functions to play the melodies
 
 def playtone(frequency):
-    buzzer.duty_u16(volume)    
+    buzzer.duty_u16(volume)
     buzzer.freq(frequency)
 
 def be_quiet():
@@ -37,16 +37,15 @@ def duration(tempo, t):
     return noteDuration
 
 def playsong(mysong):
-    
+
     try:
         
-        print(mysong[0]) # print title to the shell 
-        tempo = mysong[1]
+        print(mysong[0]) # print title of the song to the shell 
+        tempo = mysong[1] # get the tempo for this song from the melodies list 
 
         # iterate over the notes of the melody. 
-        # Remember, the array is twice the number of notes (notes + durations)
+        # The array is twice the number of notes (notes + durations)
         for thisNote in range(2, len(mysong), 2):
-            print("play",end='')
             
             noteduration = duration(tempo, int(mysong[thisNote+1]))
             
@@ -60,20 +59,16 @@ def playsong(mysong):
             sleep(noteduration*0.1/1000) # ... and leave 10% as a pause between notes
         
             if button.value()==0: # stop playing this track if button is pushed
-                print("pushed!")
                 return
             
     except: # make sure the buzzer stops making noise when something goes wrong or when the script is stopped
-        
         be_quiet()
         
-
 
 playsong(melody[track])  # actually start playing the melody
 
 
-
-# the next part is added so you can add a button to switch melodies
+# the next part allows you to add a button to switch melodies
 
 while True: # constantly keep checking if the button is being pressed
     if button.value()==0: # if it is...
