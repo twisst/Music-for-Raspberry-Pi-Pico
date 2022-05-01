@@ -6,17 +6,27 @@ Songs to play with a buzzer connected to a Raspberry Pi Pico.
 
 Save playMelodies.py, melodies.py, notes.py and \_\_init\_\_.py to the Pico (using the [Thonny editor](https://thonny.org/) for instance). 
 
-Connect a buzzer to the Pico: one wire to pin 15 and the other to a ground pin, like so:
+Connect a buzzer to the Pico: one wire to pin 16 and the other to a ground pin, like so:
 
 ![alt tag](pico-buzzer.png)
 
-The buzzer (also called piezo speaker or piezo disk) comes in two flavors: active and passive. To play melodies you need the passive kind. The active buzzers are what make the 'beep' sound in electronic devices like hand scanners. They will try to produce the same frequency 'beep' no matter what tone you ask them to play.
-
 Once the buzzer is connected and the scripts are saved to the Pico, then run playMelodies.py. You should hear something!
 
-You can also connect an amplified speaker to those pins, if you want more volume when you play the Super Mario theme :-)
-
 In playMelodies.py you can change the volume and which track to play. Run the file again from Thonny when you change either.
+
+## Adding a button
+
+Because all melodies are in one file, it's easy to add a button to switch to the next track. Connect one to a ground connection and pin 15, like so:
+
+![alt tag](pico-buzzer-button.png)
+
+If you don't have a button, then you can also make and break the connection with just a wire between those pins.
+
+## About the speaker
+
+The buzzer (also called piezo speaker or piezo disk) comes in two flavors: active and passive. To play melodies you need the passive kind. The active buzzers are what make the 'beep' sound in electronic devices like hand scanners. They will try to produce the same frequency 'beep' no matter what tone you ask them to play.
+
+You can also connect an amplified speaker to those pins, if you want more volume when you play the Super Mario theme :-)
 
 ## List of tunes
 
@@ -25,20 +35,20 @@ In playMelodies.py you can change the volume and which track to play. Run the fi
  2. Silent Night
  3. Pacman
  4. Ode an die Freude, Beethoven's Symphony No. 9 
- 5. Mii Channel theme
- 6. Wiegenlied (Brahms' Lullaby)
- 7. Minuet in G - Petzold
- 8. Badinerie - Johann Sebastian Bach
- 9. Für Elise - Ludwig van Beethoven
-10. Cantina Band (Star wars)
-11. Song of storms (The Legend of Zelda, Ocarina of Time)
-12. The Lion Sleeps Tonight
-13. Theme A from Tetris (Korobeiniki)
-14. Happy Birthday
-15. The Lick
-16. Canon in D - Pachelbel
-17. Darth Vader theme (Star Wars)
-18. Nokia Ringtone
+ 5. Wiegenlied (Brahms' Lullaby)
+ 6. Theme A from Tetris (Korobeiniki)
+ 7. Happy Birthday
+ 8. Darth Vader theme (Star Wars)
+ 9. Nokia Ringtone
+10. Mii Channel theme
+11. Minuet in G - Petzold
+12. Badinerie - Johann Sebastian Bach
+13. Für Elise - Ludwig van Beethoven
+14. Cantina Band (Star wars)
+15. Song of storms (The Legend of Zelda, Ocarina of Time)
+16. The Lion Sleeps Tonight
+17. The Lick
+18. Canon in D - Pachelbel
 19. At Doom's Gate
 20. Pink Panther theme
 21. Hedwig's theme (Harry Potter)
