@@ -76,9 +76,10 @@ You can also connect an amplified speaker to those pins, if you want more volume
 
 I run an electronics workshop at an art academy. I have decided to gradually switch over from the Arduino Uno to the Raspberry Pi Pico as the go-to board in my workshop. They're much faster and have more memory, are cheaper, and they run Python instead of C which is a better choice to start learning coding with. It's a nice bonus that the Pico can be programmed to act as a keyboard or mouse.
 
-Connecting a buzzer to a microcontroller is a fun starter project. After making the first beeping sounds it's fun to also make it play songs. For Arduino there is [this fine list](https://github.com/robsoncouto/arduino-songs) of scripts to do that. To use those tunes with the Pico, it's easier to translate these scripts into the [MicroPython](https://www.raspberrypi.com/documentation/microcontrollers/micropython.html) language. 
-This adaptation highlights one of the advantages of the Pico over the Arduino Uno. With the Arduino, each melody had to be a single file to fit on the Uno's limited flash memory of 32k bytes and we had to upload a new file every time we wanted to try a different tune.
-The complete list of 41 melodies (together with the script to play melodies plus the notes frequencies, 124 Kb in total) easily fits on the 2 Megabyte memory of the Pico.
+Connecting a buzzer to a microcontroller is a fun starter project. After making the first beeping sounds it's fun to also make it play songs. For Arduino there is [this fine list](https://github.com/robsoncouto/arduino-songs) of scripts to do that. To play those tunes with the Pico, it's easier to translate the scripts into the [MicroPython](https://www.raspberrypi.com/documentation/microcontrollers/micropython.html) language.
+
+This adaptation also highlights one of the advantages of the Pico over the Arduino Uno. With the Arduino, each melody had to be a single file for it to fit on the Uno's limited flash memory of 32k bytes. That meant we had to upload a new file every time we wanted to try a different tune.
+The complete list of 41 melodies (together with the script to play melodies plus the notes frequencies, 125 Kb in total) easily fits on the 2 Megabyte memory of the Pico.
 
 ## Source
 
