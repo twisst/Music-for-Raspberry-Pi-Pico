@@ -1,6 +1,8 @@
 # Songs for playing on Raspberry Pi Pico
 
-Songs to play with a buzzer connected to a Raspberry Pi Pico.
+41 different songs to play with a buzzer connected to a Raspberry Pi Pico.
+
+https://user-images.githubusercontent.com/2244463/166491723-4f906778-c5f8-4985-9013-dee82b14d104.mp4
 
 ## How to use
 
