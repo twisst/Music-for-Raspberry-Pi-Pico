@@ -1,4 +1,4 @@
-# Songs for playing on Raspberry Pi Pico
+# Music for Raspberry Pi Pico
 
 41 different songs to play with a buzzer connected to a Raspberry Pi Pico.
 
